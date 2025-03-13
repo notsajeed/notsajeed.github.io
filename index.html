@@ -21,7 +21,9 @@
                 <div class="about">About me</div>
                 <div class="about-content">In a world driven by technology, design plays a crucial role in shaping interactions. A well-crafted UI is not just about aesthetics; it's about seamless experiences, accessibility, and engagement. Typography, colors, and layouts work together to create an immersive digital presence.</div>
             </div>
-            <div class="container2">2</div>
+            <div class="container2">
+                <img class="image" id="random-img" src="images/img5.jpg">
+            </div>
         </div>
         <div class="bottom">
             <div class="bottom-left">
@@ -56,17 +58,38 @@
                 <div class="container5">
                     <div class="hobbies-title">Hobbies and intrests</div>
                     <div class="hobbies-content">
-                         Gaming – I enjoy both story-driven and multiplayer games, mostly for fun and socializing.<br>
+                         <strong>Games</strong> – I enjoy both story-driven and multiplayer games, mostly for fun and socializing.<br>
 
-                         Design & Animation – Love creating UI concepts, posters, and motion graphics, and recently exploring 3D modeling.<br>
+                         <strong>Graphic Design</strong> – Love creating UI concepts, posters, and motion graphics, and recently exploring 3D modeling.<br>
 
-                        Movies & Series – Into sci-fi, thrillers, and action, though I watch less these days.<br>
+                         <strong>Movies & shows</strong> – Into sci-fi, thrillers, and action, though I watch less these days.<br>
 
-                         Tech & AI – Always experimenting with AI, system development, and hardware design, working on cool projects.<br>
+                         <strong>Tech & AI</strong> – Always experimenting with AI, system development, and hardware design, working on cool projects.<br>
                     </div>
                 </div>
            </div>
         </div>
     </div>
+    <script>
+        const images = [
+          "images/img1.jpg",
+          "images/img2.jpg",
+          "images/img3.jpg",
+          "images/img4.jpg",
+        ];
+      
+        function changeImage() {
+          let imgElement = document.getElementById("random-img");
+          let randomIndex = Math.floor(Math.random() * images.length);
+          imgElement.style.opacity = "0"; 
+          setTimeout(() => {
+            imgElement.src = images[randomIndex];
+            imgElement.style.opacity = "1"; 
+          }, 500);
+        }
+      
+        setInterval(changeImage, 5000); 
+      </script>
+      
 </body>
 </html>
