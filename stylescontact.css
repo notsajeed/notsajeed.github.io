@@ -35,3 +35,119 @@ header{
     color: rgb(255, 255, 255);
     border-radius: 4px;
 }
+
+.container{
+    background-color: rgb(0, 0, 0);
+    margin: 50px 10% 500px 10%;
+    align-self: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    height: 1000px;
+}
+
+.top-container{
+    background-color: rgb(0, 0, 0);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 8px;
+    height: 400px;
+}
+
+.top-left-container{
+    background-color: rgb(0, 0, 0);
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    margin: 8px;
+}
+
+.left-top{
+    background-color: rgb(38, 42, 45);
+    margin: 10px;
+    border-radius: 6px;
+}
+
+.left-bottom{
+    background-color:rgb(38, 42, 45);
+    margin: 10px;
+    border-radius: 6px;
+}
+
+.top-right-container{
+    background-color: rgb(38, 42, 45);
+    margin: 18px;
+    border-radius: 6px;
+}
+
+.left-top:hover,.left-bottom:hover,.top-right-container:hover,.bottom-container:hover{
+    box-shadow: 0px 2px 10px rgb(47, 0, 255);
+}
+
+.bottom-container{
+    background-color:rgb(38, 42, 45);
+    margin: 26px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 2fr 1fr;
+    border-radius: 6px;
+}
+.name{
+    margin-top: 40px;
+}
+
+p{
+    font-family: 'manrope';
+    font-weight: 800;
+    font-size: 32px;
+    background-color: rgb(38, 42, 45);
+    margin: 10px 0px 0px 40px;
+}
+
+.input-name,.input-mail{
+    height: 60px;
+    width: 90%;
+    margin: 10px 0px 0px 40px;
+    font-family: 'work sans';
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 18px;
+    padding-left: 20px;
+    font-weight: 600;
+    border-radius: 6px;
+    box-shadow: 1px 1px 6px black;
+}
+
+.input-message{
+    height: 200px;
+    width: 90%;
+    margin: 10px 0px 0px 40px;
+    font-family: 'work sans';
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 18px;
+    padding-left: 20px;
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 20px;
+    row-gap: 10px;
+    box-shadow: 1px 1px black;
+}
+.input-message::-webkit-scrollbar {
+    display: none; 
+  }
+
+.button{
+    margin:40px 40px 10px 40px;
+    height: 60px;
+    font-family: 'work sans';
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 6px;
+    border: none;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.button:hover{
+    background-color: rgb(47, 0, 255);
+    color: white;
+}
