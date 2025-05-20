@@ -240,12 +240,13 @@ p{
         padding: 0 10px;
     }
 
-    header {
-    
-        width: 90%;
-        max-width: 90vw;
-        gap: 10px;
+   header {
+      width: 90%;
+      font-size: 16px;
+      padding: 10px;
+      gap: 10px;
     }
+  
 
     .container {
         width: 100%;
