@@ -63,7 +63,7 @@ header{
 }
 
 .left-top-link{
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(200, 200, 200);
     margin: 10px;
     border-radius: 6px;
     display: flex;
@@ -74,7 +74,7 @@ header{
 
 
 .left-bottom-link{
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(200, 200, 200);
     margin: 10px;
     border-radius: 6px;
     display: flex;
@@ -85,7 +85,7 @@ header{
 
 
 .top-right-container-link{
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(200, 200, 200);
     margin: 18px;
     border-radius: 6px;
     display: flex;
@@ -107,11 +107,15 @@ header{
 
 .bottom-container{
     background-color:rgb(0, 0, 0);
-    margin: 26px;
     border-radius: 18px;
-    box-shadow: 2px 2px 15px blue;
+    box-shadow: 0px 4px 15px rgb(0, 0, 255,0.6);
     animation: fadeInBottom 1.4s forwards;
-
+    display: flex;
+    justify-content: center;
+    padding: 80px;
+    flex-direction: column;
+    row-gap: none;
+    margin-top: 50px;
 }
 
 .head{
@@ -119,26 +123,22 @@ header{
     font-family: 'manrope';
     font-weight: 800;
     font-size: 36px;
-    margin: 40px;
 }
 
-.name{
-    margin-top: 40px;
-    margin-right: 20px;
-}
+
 
 p{
     font-family: 'manrope';
     font-weight: 800;
     font-size: 28px;
-    background-color: rgb(0, 0, 0);
-    margin: 10px 0px 0px 40px;
+    margin: 20px 0px 10px 0px;
+    padding: 0;
 }
 
 .input-name,.input-mail{
+    width: 600px;
     height: 60px;
-    width: 700px;
-    margin: 10px 0px 0px 40px;
+    margin: 20px 0px 10px 0px;
     font-family: 'work sans';
     padding-left: 20px;
     background-color: rgb(16, 16, 16);
@@ -148,32 +148,33 @@ p{
     font-weight: 600;
     border-radius: 9px;
     box-shadow: 1px 1px 6px black;
-    margin-right: 20px;
+    margin: 0;
 }
 
 .input-message{
-    height: 200px;
-    width: 700px;
-    margin: 10px 0px 0px 40px;
+
+    width: 600px;
+    margin: 20px 0px 10px 0px;
     font-family: 'work sans';
     background-color: rgb(16, 16, 16);
     color: white;
     border: none;
     font-size: 18px;
-    padding-left: 20px;
-    padding-top: 20px;
     font-weight: 600;
     border-radius: 6px;
     row-gap: 10px;
     box-shadow: 1px 1px black;
     resize: none;
+    margin: 0;
+    padding: 10px;
 }
 .input-message::-webkit-scrollbar {
     display: none; 
   }
 
 .button{
-    margin:40px 40px 40px 40px;
+
+    width: 620px;
     height: 60px;
     font-family: 'work sans';
     font-weight: 600;
@@ -181,9 +182,9 @@ p{
     border-radius: 6px;
     border: none;
     transition: background-color 0.2s ease-in-out;
-    width: 720px;
     background-color: rgb(16, 16, 16);
     color: white;
+    margin: 20px 0px 10px 0px;
 }
 
 .button:hover{
@@ -231,5 +232,67 @@ p{
         opacity: 1;
         filter: blur(0px);
         transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 0 10px;
+    }
+
+    header {
+    
+        width: 90%;
+        max-width: 90vw;
+        gap: 10px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 95vw;
+        height: auto;
+        grid-template-rows: auto auto;
+        margin: 40px 0 200px 0;
+    }
+
+    .top-container {
+        grid-template-columns: 1fr;
+        height: auto+10px;
+    }
+
+    .top-left-container {
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .left-top-link,
+    .left-bottom-link,
+    .top-right-container-link {
+        margin: 10px;
+    }
+
+    .bottom-container {
+        padding: 30px 10px;
+    }
+
+    .input-name,
+    .input-mail,
+    .input-message,
+    .button {
+        width: 95%;
+        max-width: 95%;
+    }
+
+    .button{
+        width: 100%+20px;
+    }
+
+    .head {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    p {
+        font-size: 22px;
+        text-align: center;
     }
 }

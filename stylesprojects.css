@@ -56,6 +56,7 @@ header{
     border-radius: 8px;
     transition: boxshadow 0.3s ease-in-out,transform 0.2s ease-in-out;
     color: rgb(255, 255, 255);
+    transition: hover 0.3s ease-in-out,transform 0.2s ease-in-out;
 }
 
 .odd-title{
@@ -68,6 +69,7 @@ header{
 
 .project-title:hover{
     box-shadow: 0px 2px 15px  rgb(43, 43, 43);
+    background-color: rgb(50, 50, 50);
 }
 .project-title::-webkit-scrollbar {
     display: none; 
@@ -114,6 +116,7 @@ h1{
 
 .images{
     max-width: 500px;
+    max-height: 300px;
 }
 
 .right-project-content{
@@ -129,6 +132,16 @@ h1{
     font-size: 36px;
 }
 
+
+.tech-stack button{
+    background-color: rgb(221, 221, 221);
+    border: none;
+    border-radius: 6px;
+    padding: 4px 8px;
+    margin: 5px;
+    font-weight: 520;
+    font-family: 'poppins';
+}
 /*animation*/
 
 @keyframes fadeInOdd {
@@ -168,5 +181,94 @@ h1{
         transform: translateY(0px);
         opacity: 1;
         filter: blur(0px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        width: 90%;
+
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 32px;
+        margin-left: 5%;
+        text-align: center;
+    }
+
+    .container {
+        margin: 40px 20px;
+    }
+
+    .project-content {
+        grid-template-columns: 1fr;
+        padding: 0 5px;
+    }
+
+    .expanded .project-content {
+        margin: 20px 10px;
+        min-height: auto;
+    }
+
+    .left-project-content,
+    .right-project-content {
+        margin: 30px 10px 0px 10px;
+    }
+
+    .images {
+        max-width: 100%;
+    }
+
+    .project-head {
+        font-size: 28px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        font-size: 14px;
+        gap: 10px;
+    }
+
+    .project-head {
+        font-size: 24px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .project-content {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+        margin: 0;
+    }
+
+    .expanded .project-content {
+        max-height: 1000px; 
+        display: grid;
+        grid-template-columns: 1fr;
+        opacity: 1;
+        padding: 10px;
+        margin: 20px 10px;
+        box-shadow: 0px 2px 10px rgb(47, 0, 255);
+    }
+
+    .left-project-content,
+    .right-project-content {
+        margin: 10px;
+    }
+
+    .images {
+        max-width: 100%;
+    }
+
+    .project-title {
+        width: 100%;
     }
 }

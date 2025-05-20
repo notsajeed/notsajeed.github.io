@@ -20,13 +20,20 @@
             <div class="project-title odd-title"><h1>Array Visualizer</h1></div>
             <div class="project-content">
                 <div class="left-project-content">
-                    <img src="images/img3.jpg" class="images">
+                    <img src="./projectimg/array.png" class="images">
                 </div>
                 <div class="right-project-content">
-                    <h2 class="project-head">This is the heading</h2>
+                    <h2 class="project-head">Array Visualizer</h2>
                     <p class="project-info">
-                        Started earnest brother believe an exposed so. Me he believing daughters if forfeited at furniture. Age again and stuff downs spoke. Late hour new nay able fat each sell. Nor themselves age introduced frequently use unsatiable devonshire get. They why quit gay cold rose deal park. One same they four did ask busy. Reserved opinions fat him nay position. Breakfast as zealously incommode do agreeable furniture. One too nay led fanny allow plate.
+                        An Array Visualizer is an interactive tool designed to help users understand how arrays work by providing real-time visual representations of array operations. It allows users to input values, perform sorting, searching, and other modifications while visually observing changes in the array. This makes complex algorithms like Linear Search, Binary Search easier to grasp.
+                        <a href="https://sajeed-d.github.io/Array-visualizer/">click here</a>
                     </p>
+                    <div class="tech-stack">
+                        <button>html</button>
+                         <button>css</button>
+                          <button>canvas</button>
+                           <button>javascript</button>
+                    </div>
                     
                 </div>
             </div>
@@ -35,21 +42,27 @@
             <div class="project-title even-title"><h1>Title Page Generator for MSRIT</h1></div>
             <div class="project-content">
                 <div class="left-project-content">
-                    <img src="images/img3.jpg" class="images">
+                    <img src="./projectimg/tpg.png" class="images">
                 </div>
                 <div class="right-project-content">
-                    <h2 class="project-head">This is the heading</h2>
+                    <h2 class="project-head">Title Page Generator for MSRIT</h2>
                     <p class="project-info">
-                        Started earnest brother believe an exposed so. Me he believing daughters if forfeited at furniture. Age again and stuff downs spoke. Late hour new nay able fat each sell. Nor themselves age introduced frequently use unsatiable devonshire get. They why quit gay cold rose deal park. One same they four did ask busy. Reserved opinions fat him nay position. Breakfast as zealously incommode do agreeable furniture. One too nay led fanny allow plate.
-                    </p>
+                        This Title Page Maker automates the creation of professional title pages for reports and assignments at Ramaiah Institute of Technology. The tool generates a formatted preview and allows downloading the title page as an image using html2canvas.js. Designed with HTML, CSS, and JavaScript. 
+                        </p>
+                        <div class="tech-stack">
+                        <button>Html</button>
+                         <button>Css</button>
+                          <button>canvas</button>
+                           <button>Javascript</button>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="project-container" id="project-container" onclick="toggleProject(this)">
+        <!-- <div class="project-container" id="project-container" onclick="toggleProject(this)">
             <div class="project-title odd-title"><h1>Stack Visualizer</h1></div>
             <div class="project-content">
                 <div class="left-project-content">
-                    <img src="images/img3.jpg" class="images">
+                    <img src="./projectimg/stack.png" class="images">
                 </div>
                 <div class="right-project-content">
                     <h2 class="project-head">This is the heading</h2>
@@ -59,23 +72,29 @@
                     
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="project-container" id="project-container" onclick="toggleProject(this)">
-            <div class="project-title even-title"><h1>Lorem ipsum dolor sit amet</h1></div>
+            <div class="project-title even-title"><h1>Quantum gates visualizer</h1></div>
             <div class="project-content">
                 <div class="left-project-content">
-                    <img src="images/img3.jpg" class="images">
+                    <img src="projectimg/quantum.png" class="images">
                 </div>
                 <div class="right-project-content">
-                    <h2 class="project-head">This is the heading</h2>
+                    <h2 class="project-head">Quantum gates visualizer</h2>
                     <p class="project-info">
-                        Started earnest brother believe an exposed so. Me he believing daughters if forfeited at furniture. Age again and stuff downs spoke. Late hour new nay able fat each sell. Nor themselves age introduced frequently use unsatiable devonshire get. They why quit gay cold rose deal park. One same they four did ask busy. Reserved opinions fat him nay position. Breakfast as zealously incommode do agreeable furniture. One too nay led fanny allow plate.
+                      An interactive quantum circuit simualator built using qiskit(python) for backend computation and react for frontend ui. it visualizes gate operations, live state vectors and measurement probabilites in real time across multiple qubits 
                     </p>
+                    <div class="tech-stack">
+                        <button>Qiskit</button>
+                         <button>Python</button>
+                          <button>Flask</button>
+                           <button>React</button>
+                    </div>
                     
                 </div>
             </div>
         </div>
-        <div class="project-container" id="project-container" onclick="toggleProject(this)">
+        <!-- <div class="project-container" id="project-container" onclick="toggleProject(this)">
             <div class="project-title odd-title"><h1>Lorem ipsum dolor sit amet jdhs hdbsys dvkjshfsn  jsgfue sjehfjs jshefus efjehjsf sjfbjs fejbfns fseuwn wksjksn,ooj </h1></div>
             <div class="project-content">
                 <div class="left-project-content">
@@ -104,15 +123,15 @@
             </div>
         </div>
     </div>
-    
+     -->
     <script> 
         function toggleProject(element) {
             let projects = document.querySelectorAll(".project-container");
-            projects.forEach(proj => {
-                if(proj !== element){
-                    proj.classList.remove("expanded");
-                }
-            });
+            // projects.forEach(proj => {
+            //     if(proj !== element){
+            //         proj.classList.remove("expanded");
+            //     }
+            // });
             element.classList.toggle("expanded");
         }
     </script>

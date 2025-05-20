@@ -76,13 +76,11 @@ header{
     transition: hover 0.2s ease-in-out;
 }
 
-.container1:hover,.container2:hover,.container5:hover,.container4:hover,.bottom-left:hover{
-    box-shadow: 0px 1px 15px rgb(42, 42, 42);
+.container1:hover,.container2:hover,.container5:hover,.container4:hover,.bottom-left:hover,.container5:hover{
+    box-shadow: 0px 2px 20px rgb(50, 50, 50);
+    background-color: rgb(50, 50, 50);
 }
 
-.container4:hover{
-    background-color:  rgb(242, 242, 242);
-}
 
 .container2{
     background-color: black;
@@ -103,7 +101,7 @@ header{
 }
 
 strong{
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-family: 'manrope';
 }
 
@@ -134,18 +132,13 @@ strong{
 }
 
 .bottom-left{
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(15, 15, 15);
     margin: 16px;
     border-radius: 6px;
     transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
     animation: fadeInc3 ease-in-out 1.5s forwards;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
-
-.bottom-left:hover{
-    background-color:  rgb(242, 242, 242);
-}
-
 
 /*skills*/
 .work-info{
@@ -200,12 +193,12 @@ strong{
 
 .container4{
     opacity: 0;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(15, 15, 15);
     margin-bottom: 10px;
     border-radius: 6px;
     transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
     animation: fadeInc2 ease-in-out 1.4s forwards;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
 
 .container5{
@@ -253,4 +246,87 @@ strong{
         filter: blur(0);
         opacity: 1;
     }
+}
+
+/* Responsive tweaks for smaller screens */
+@media screen and (max-width: 768px) {
+
+    body {
+      grid-template-rows: auto;
+    }
+  
+    header {
+      width: 90%;
+      font-size: 16px;
+      padding: 10px;
+      gap: 10px;
+    }
+  
+    .container {
+      margin: 20px 5%;
+      height: auto;
+      margin-bottom: 100px;
+    }
+  
+    .top {
+      grid-template-columns: 1fr;
+      height: auto;
+    }
+  
+    .container1,
+    .container2 {
+      height: auto;
+      margin: 12px;
+    }
+  
+    .about,
+    .education-title,
+    .hobbies-title,
+    .work-info {
+      font-size: 28px;
+      margin-left: 12px;
+    }
+  
+    .about-content,
+    .education-content,
+    .hobbies-content {
+      font-size: 14px;
+      margin-left: 12px;
+    }
+  
+    .bottom {
+      grid-template-columns: 1fr;
+      height: auto;
+    }
+  
+    .bottom-left {
+      margin: 12px;
+    }
+  
+    .bottom-right {
+      margin: 12px;
+      grid-template-rows: auto auto;
+    }
+  
+    .work-content {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 16px;
+      margin: 12px;
+    }
+  
+    .work-tech {
+      height: 70px;
+    }
+  
+    .icons {
+      max-width: 50px;
+      max-height: 50px;
+    }
+
+  }
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
