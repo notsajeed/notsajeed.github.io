@@ -123,6 +123,8 @@ strong{
 
 }
 
+
+
 /*Bottom*/
 .bottom{
 
@@ -329,4 +331,26 @@ strong{
     top: 0;
     left: 0;
     z-index: -1;
+}
+
+/* hobbies Table correction */
+   .interest-box {
+      background: #1e1e1e;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      cursor: default;
+    }
+
+    .interest-box:hover {
+      transform: scale(1.05);
+      background: #2c2c2c;
+    }
+
+    .hobbies-content{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
 }
