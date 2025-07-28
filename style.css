@@ -76,7 +76,7 @@ header{
     transition: hover 0.2s ease-in-out;
 }
 
-.container1:hover,.container2:hover,.container5:hover,.container4:hover,.bottom-left:hover,.container5:hover{
+.container1:hover,.container2:hover,.container5:hover,.container4:hover,.bottom-left:hover,.container5:hover, .certifications:hover , .play-game:hover{
     box-shadow: 0px 2px 20px rgb(50, 50, 50);
     background-color: rgb(50, 50, 50);
 }
@@ -341,11 +341,11 @@ strong{
       text-align: center;
       cursor: default;
     }
-
+/* 
     .interest-box:hover {
       transform: scale(1.05);
       background: #2c2c2c;
-    }
+    } */
 
     .hobbies-content{
       display: grid;
@@ -353,4 +353,63 @@ strong{
       gap: 20px;
       align-items: center;
       justify-content: center;
+}
+
+/*Certifications Section */
+.certifications , .play-game{
+   background-color: rgb(15, 15, 15);
+    margin: 16px;
+    border-radius: 6px;
+    transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
+    animation: fadeInc3 ease-in-out 2.0s forwards;
+    color: rgb(255, 255, 255);
+    padding-bottom: 10px;
+    
+    
+}
+
+/* .certification-content
+{
+  text-align: center;
+} */
+
+.certi-name {
+    font-size: 16px;         
+    text-decoration: none;   
+    font-weight: bold;
+    display: inline-block;
+    padding: 0px 16px; 
+    color: #fff;        
+    font-family: 'manrope';
+    font-weight: 700;
+    margin: 0 5%;
+}
+
+.cer {
+    margin-bottom: 15px;
+}
+
+.certi-name:hover {
+    color: #b2c1f0;               
+    border-radius: 4px;  
+    text-decoration: underline;     
+}
+
+/* Play Game Section */
+.play-game{
+    background-color: rgb(15, 15, 15);
+    margin: 16px;
+    border-radius: 6px;
+    transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
+    animation: fadeInc3 ease-in-out 2.2s forwards;
+    color: rgb(255, 255, 255);
+}
+.game-info{
+    font-size: 16px;
+    font-family: 'manrope';
+    font-weight: 700;
+    margin: 16px;
+    margin-left: 22px;
+    text-align: center;
+    color: rgb(255, 255, 255);
 }
