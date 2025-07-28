@@ -38,6 +38,8 @@ header{
     border-radius: 4px;
 }
 
+
+
 .container{
     background-color: rgb(0, 0, 0);
     margin-top: 60px;
@@ -76,10 +78,10 @@ header{
   }
 
 h1{
-    margin-left: 10%;
     font-size: 46px;
     font-family: 'manrope';
     align-items: center;
+    text-align: center;
 }
 
 .project-content{
@@ -275,4 +277,11 @@ h1{
     .project-title {
         width: 100%;
     }
+
+     h1{
+        padding: auto;
+        text-align: center;
+        margin-left: 0px;
+    }
+  
 }
