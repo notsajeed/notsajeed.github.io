@@ -266,9 +266,16 @@ p{
     }
 
     .left-top-link,
-    .left-bottom-link,
-    .top-right-container-link {
+    .left-bottom-link
+     {
         margin: 10px;
+        padding: 10px 0px;
+
+    }
+
+    .top-right-container-link{
+        margin: 0px 20px;
+
     }
 
     .bottom-container {
