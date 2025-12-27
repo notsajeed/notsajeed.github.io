@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quantum</title>
+
+<!-- Fonts (same as other pages) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* Base */
+body{
+    background:#000;
+    color:#fff;
+    display:grid;
+    grid-template-rows:auto;
+    font-family:'Poppins', sans-serif;
+    margin-bottom:200px;
+}
+body::-webkit-scrollbar{ display:none; }
+
+/* Back Button */
+.back-btn{
+    position:fixed;
+    top:20px;
+    left:20px;
+    text-decoration:none;
+    font-family:'Manrope';
+    font-weight:600;
+    font-size:14px;
+    color:#fff;
+    background:#0f0f0f;
+    padding:10px 16px;
+    border-radius:8px;
+    transition:0.3s ease-in-out;
+    z-index:10;
+}
+.back-btn:hover{
+    background:#323232;
+    box-shadow:0px 2px 20px rgb(50,50,50);
+}
+
+/* Layout */
+.container{
+    margin:80px 10%;
+    display:grid;
+    gap:24px;
+}
+
+/* Cards */
+.card{
+    background:#0f0f0f;
+    border-radius:6px;
+    padding:24px;
+    transition:0.3s ease-in-out;
+}
+.card:hover{
+    background:#323232;
+    box-shadow:0px 2px 20px rgb(50,50,50);
+}
+
+/* Typography */
+.title{
+    font-family:'Manrope';
+    font-size:42px;
+    font-weight:700;
+    margin-bottom:12px;
+}
+.text{
+    font-size:15px;
+    max-width:700px;
+    line-height:1.6;
+}
+.section-title{
+    font-family:'Manrope';
+    font-size:28px;
+    font-weight:600;
+    margin-bottom:16px;
+}
+
+/* Focus Areas */
+.focus-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+.focus-item{
+    background:#1e1e1e;
+    border-radius:12px;
+    padding:20px;
+    text-align:center;
+    font-size:14px;
+    font-weight:500;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .container{ margin:60px 5%; }
+    .title{ font-size:30px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Back Button -->
+<a href="../index.html" class="back-btn">← Back</a>
+
+<div class="container">
+
+    <!-- Intro -->
+    <div class="card">
+        <div class="title">Quantum</div>
+        <div class="text">
+            I’ve been interested in quantum computing since my first year of college.
+            What started as curiosity around quantum mechanics and computation
+            has grown into a focused effort to understand how quantum systems
+            can reshape problem-solving and computation.
+        </div>
+    </div>
+
+    <!-- Involvement -->
+    <div class="card">
+        <div class="section-title">Involvement</div>
+        <div class="text">
+            I am part of the <strong>QuantumCluster</strong> team, where I actively
+            engage in discussions, learning sessions, and collaborative exploration
+            of quantum computing concepts and applications.
+        </div>
+    </div>
+
+    <!-- Interests -->
+    <div class="card">
+        <div class="section-title">Areas of Interest</div>
+
+        <div class="focus-grid">
+            <div class="focus-item">Quantum Computing Fundamentals</div>
+            <div class="focus-item">Quantum Algorithms</div>
+            <div class="focus-item">Quantum Mechanics & Theory</div>
+            <div class="focus-item">Future Applications of Quantum Tech</div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

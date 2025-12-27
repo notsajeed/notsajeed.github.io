@@ -340,6 +340,8 @@ strong{
       padding: 20px;
       text-align: center;
       cursor: default;
+      text-decoration: none;
+      color: white;
     }
 /* 
     .interest-box:hover {
