@@ -366,9 +366,18 @@ strong{
     animation: fadeInc3 ease-in-out 2.0s forwards;
     color: rgb(255, 255, 255);
     padding-bottom: 10px;
-    
+    text-decoration: none;
     
 }
+
+.play-game{
+    display: flex;
+    align-items: center; 
+    text-decoration: none;
+    color: inherit;
+    justify-content: center;
+}
+
 
 /* .certification-content
 {
@@ -405,6 +414,13 @@ strong{
     transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
     animation: fadeInc3 ease-in-out 2.2s forwards;
     color: rgb(255, 255, 255);
+    text-decoration: none;
+
+}
+
+.education-title{
+    justify-content: center;
+    align-items: center;
 }
 .game-info{
     font-size: 16px;

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drop</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+*{ box-sizing:border-box; }
+html,body{
+    margin:0;
+    background:#000;
+    color:#fff;
+    font-family:Poppins, sans-serif;
+    overflow:hidden;
+}
+
+.back-btn{
+    position:fixed;
+    top:20px; left:20px;
+    padding:10px 16px;
+    font:600 14px Manrope;
+    background:#0f0f0f;
+    color:#fff;
+    border-radius:8px;
+    text-decoration:none;
+}
+
+.hud{
+    position:fixed;
+    top:20px; right:20px;
+    font:700 16px Manrope;
+}
+
+canvas{ display:block; }
+</style>
+</head>
+
+<body>
+
+<a class="back-btn" href="../index.html">← Back</a>
+<div class="hud">Score: <span id="score">0</span></div>
+<canvas id="c"></canvas>
+
+<script>
+/* ================= CORE SETUP ================= */
+const canvas = document.getElementById("c");
+const ctx = canvas.getContext("2d", { alpha:false });
+
+function resize(){
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener("resize", () => {
+    clearTimeout(resize.t);
+    resize.t = setTimeout(resize, 200);
+});
+
+ctx.imageSmoothingEnabled = false;
+ctx.textAlign = "center";
+ctx.textBaseline = "middle";
+
+/* ================= CONSTANTS ================= */
+const GRAVITY = 1800;
+const LIFT = -520;
+const PIPE_SPEED = 260;
+const PIPE_GAP = 170;
+const PIPE_WIDTH = 54;
+const PIPE_INTERVAL = 1.6;
+
+/* ================= STATE ================= */
+let lastTime = 0;
+let pipeTimer = 0;
+let gameOver = false;
+let score = 0;
+let shownScore = -1;
+
+/* ================= BIRD ================= */
+const bird = {
+    x: () => canvas.width * 0.25,
+    y: 0,
+    r: 10,
+    v: 0
+};
+
+/* ================= PIPES ================= */
+const pipes = [];
+
+/* ================= INPUT ================= */
+window.addEventListener("pointerdown", flap);
+window.addEventListener("keydown", e=>{
+    if(e.code === "Space"){ e.preventDefault(); flap(); }
+});
+
+function flap(){
+    if(gameOver){ reset(); return; }
+    bird.v = LIFT;
+}
+
+/* ================= RESET ================= */
+function reset(){
+    pipes.length = 0;
+    bird.y = canvas.height / 2;
+    bird.v = 0;
+    pipeTimer = 0;
+    score = 0;
+    shownScore = -1;
+    gameOver = false;
+}
+
+/* ================= UPDATE ================= */
+function update(dt){
+    bird.v += GRAVITY * dt;
+    bird.y += bird.v * dt;
+
+    pipeTimer += dt;
+    if(pipeTimer >= PIPE_INTERVAL){
+        pipeTimer = 0;
+        const top = Math.random() * (canvas.height - PIPE_GAP - 200) + 100;
+        pipes.push({ x: canvas.width, top, scored:false });
+    }
+
+    for(let i=pipes.length-1;i>=0;i--){
+        const p = pipes[i];
+        p.x -= PIPE_SPEED * dt;
+
+        if(
+            bird.x()+bird.r > p.x &&
+            bird.x()-bird.r < p.x + PIPE_WIDTH &&
+            (bird.y-bird.r < p.top || bird.y+bird.r > p.top+PIPE_GAP)
+        ){
+            gameOver = true;
+        }
+
+        if(!p.scored && p.x + PIPE_WIDTH < bird.x()){
+            p.scored = true;
+            score++;
+        }
+
+        if(p.x + PIPE_WIDTH < 0){
+            pipes.splice(i,1);
+        }
+    }
+
+    if(bird.y-bird.r < 0 || bird.y+bird.r > canvas.height){
+        gameOver = true;
+    }
+}
+
+/* ================= DRAW ================= */
+function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    const bx = Math.round(bird.x());
+    const by = Math.round(bird.y);
+
+    ctx.fillStyle = "#fff";
+    ctx.beginPath();
+    ctx.arc(bx, by, bird.r, 0, Math.PI*2);
+    ctx.fill();
+
+    ctx.fillStyle = "#1e1e1e";
+    for(const p of pipes){
+        const px = Math.round(p.x);
+        ctx.fillRect(px, 0, PIPE_WIDTH, p.top);
+        ctx.fillRect(px, p.top + PIPE_GAP, PIPE_WIDTH, canvas.height);
+    }
+
+    if(gameOver){
+        ctx.fillStyle = "#fff";
+        ctx.font = "700 26px Manrope";
+        ctx.fillText("Game Over", canvas.width/2, canvas.height/2 - 18);
+
+        ctx.font = "500 18px Poppins";
+        ctx.fillText("Score: " + score, canvas.width/2, canvas.height/2 + 12);
+
+        ctx.font = "400 14px Poppins";
+        ctx.fillText("Click or Space to Restart", canvas.width/2, canvas.height/2 + 40);
+    }
+
+    if(score !== shownScore){
+        document.getElementById("score").textContent = score;
+        shownScore = score;
+    }
+}
+
+/* ================= LOOP ================= */
+function loop(t){
+    const dt = Math.min((t - lastTime) / 1000, 0.02);
+    lastTime = t;
+
+    if(!gameOver) update(dt);
+    draw();
+
+    requestAnimationFrame(loop);
+}
+
+/* ================= START ================= */
+reset();
+requestAnimationFrame(loop);
+</script>
+
+</body>
+</html>
